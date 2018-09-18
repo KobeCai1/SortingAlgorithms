@@ -6,14 +6,14 @@ import (
 
 func InsertionSorting(index int) {
 	sortArray := getArray(index)
-	for outer := 1; outer < index; outer++ {
-		if sortArray[outer] < sortArray[outer-1] {
-			seleted := sortArray[outer]
-			inner := outer - 1
-			for ; inner >= 0 && seleted < sortArray[inner]; inner-- {
-				sortArray[inner+1] = sortArray[inner]
+	for forward := 1; forward < index; forward++ {
+		if sortArray[forward] < sortArray[forward-1] {
+			seleted := sortArray[forward]
+			backward := forward - 1
+			for ; backward >= 0 && seleted < sortArray[backward]; backward-- {
+				sortArray[backward+1] = sortArray[backward]
 			}
-			sortArray[inner+1] = seleted
+			sortArray[backward+1] = seleted
 		}
 	}
 	for i := 0; i < index; i++ {
