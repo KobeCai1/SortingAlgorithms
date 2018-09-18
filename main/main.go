@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "SortingAlgorithms/sorting"
 
 func main() {
-	fmt.Println("Hello World")
+	sorting.InsertionSorting(10)
 }
